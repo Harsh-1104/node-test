@@ -88,10 +88,10 @@ app.get('/filedata/:id', (req, res) => {
 // Display Data from a Database [phpmyadmin]
 
 const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    pwd: '',
-    database: 'sample'
+    host: 'http://sql107.epizy.com',
+    user: 'epiz_33324458',
+    pwd: 'ptNrYIOsQ5n0f',
+    database: 'epiz_33324458_sample'
 })
 
 // 3 different API for different table
