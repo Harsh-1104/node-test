@@ -23,7 +23,7 @@ const courses = [
 ]
 
 app.get('/', (req, res) => {
-    res.send('Hello World hi');
+    res.send('Hello World bye');
 });
 
 app.get('/api/course', (req, res) => {
