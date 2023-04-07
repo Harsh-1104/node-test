@@ -90,9 +90,9 @@ app.get('/filedata/:id', (req, res) => {
 
 const conn = mysql.createConnection({
     host: '164.52.208.110',
-    user: 'qitsolution_tempuser',
-    password: 'Qit123@#india',
-    database: 'qitsolution_sample'
+    user: 'qitsolution_harsh',
+    password: 'qitharsh1234',
+    database: 'qitsolution_sampleharsh'
 })
 
 conn.connect((err) => {
@@ -110,11 +110,6 @@ app.get('/abcv', (req, res) => {
         if (err) return res.send(err);
         res.send(result);
     });
-    // }
-    // catch (e) {
-    //     console.log(e);
-    // }
-
 });
 
 // 3 different API for different table
