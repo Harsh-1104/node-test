@@ -88,16 +88,38 @@ app.get('/filedata/:id', (req, res) => {
 // Display Data from a Database [phpmyadmin]
 
 const conn = mysql.createConnection({
-    host: 'http://sql107.epizy.com',
-    user: 'epiz_33324458',
-    pwd: 'ptNrYIOsQ5n0f',
-    database: 'epiz_33324458_sample'
+    host: '164.52.208.110',
+    user: 'qitsolution_tempuser',
+    password: 'Qit123@#india',
+    database: 'qitsolution_sample'
 })
+
+conn.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database: ', err);
+        return;
+    }
+
+    console.log('Connection to database successful!');
+});
+
+app.get('/abcv', (req, res) => {
+    // try {
+    conn.query("select * from qitsolution_sample.users", function (err, result) {
+        if (err) return res.send(err);
+        res.send(result);
+    });
+    // }
+    // catch (e) {
+    //     console.log(e);
+    // }
+
+});
 
 // 3 different API for different table
 app.get('/database/student', (req, res) => {
     conn.query("select * from student", function (err, result, field) {
-        if (err) return res.send("Query Faild to load data.")
+        if (err) return res.send(err);
         res.send(result);
     });
 });
