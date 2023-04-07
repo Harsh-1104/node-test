@@ -3,7 +3,7 @@ const { json } = require("express/lib/response");
 const mysql = require("mysql");
 const app = express();
 let request = require('request').defaults({ rejectUnauthorized: false });
-
+require("dotenv").config();
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -11,9 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var fs = require('fs'); //require file system object
 
-app.listen(3000, () => console.log('listening on port 3000...'));
+app.listen(process.env.PORT, () => console.log('listening on port 3000...'));
 
 app.use(express.json());
+// console.log(process);
 
 const courses = [
     { id: 1, name: 'course1' },
